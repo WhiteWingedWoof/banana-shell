@@ -1,0 +1,16 @@
+{
+    "name": "BananaShell.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:3167db729265b45448efffe0eab96a10"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}
