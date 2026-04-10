@@ -1,14 +1,14 @@
 using UnityEditor;
 using UnityEngine;
 using System.IO;
-using PixieBox.Editor;
+using Workshop2D.PixieBox.Editor;
 
 public static class BananaShellCommands
 {
     // XXX Utils
     private static string GetActiveFolderPath()
     {
-        return PixieBox.PathUtils.GetProjectWindowActiveFolder();
+        return PathUtils.GetProjectWindowActiveFolder();
     }
 
     // ns
@@ -19,9 +19,6 @@ public static class BananaShellCommands
         {
             name = args[1];
         }
-
-        // namespace implemented later
-        // string namespaceStr = args.Length > 2 ? args[2] : "";
         
         string activeFolder = GetActiveFolderPath();
         string uniquePath = AssetDatabase.GenerateUniqueAssetPath(Path.Combine(activeFolder, name + ".cs"));
@@ -48,8 +45,11 @@ public class {className} : MonoBehaviour
 }}";
         File.WriteAllText(uniquePath, template);
         AssetDatabase.ImportAsset(uniquePath);
-        
-        return $"success: new script created in : {activeFolder}";
+        if (args.Length > 1)
+        {
+            return $"new script '{className}.cs' created in : {activeFolder}";
+        }
+        return $"new script created in : {activeFolder}";
     }
 
 

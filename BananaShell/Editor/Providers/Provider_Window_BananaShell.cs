@@ -8,8 +8,6 @@ public static class Provider_Window_BananaShell
     [Shortcut("Workshop2D/Banana Shell", KeyCode.KeypadPlus)]
     public static void ShowWindow()
     {
-        var window = EditorWindow.GetWindow<BananaShellWindow>("Banana Shell");
-        window.Show();
-        window.Focus();
+        BananaShellWindow.ShowWindow();
     }
 }
